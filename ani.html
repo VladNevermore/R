@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #content {
+      height: 200vh; /* Вы можете увеличить этот параметр для создания более длинной страницы */
+      background-color: #f0f0f0;
+      position: relative;
+    }
+
+    #trigger {
+      height: 100vh;
+      background-color: #3498db;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      line-height: 100vh;
+    }
+
+    #gif-container {
+      height: 100vh;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #hidden-gif {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div id="trigger">Долистайте вниз, чтобы увидеть гифку</div>
+    <div id="gif-container">
+      <img id="hidden-gif" src="C:\Users\Сергей\Desktop\hehe\94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif" alt="Hidden GIF">
+      <audio id="audio" src="C:\Users\Сергей\Desktop\hehe\micici.mp3" preload="auto"></audio>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var trigger = document.getElementById('trigger');
+      var gifContainer = document.getElementById('gif-container');
+      var audio = document.getElementById('audio');
+
+      var triggerBottom = trigger.getBoundingClientRect().bottom;
+      var windowBottom = window.innerHeight;
+
+      if (triggerBottom <= windowBottom) {
+        gifContainer.style.opacity = 1;
+        audio.play(); // Воспроизведение звука
+
+        // Ваш код анимации или других действий после того, как пользователь видит гифку
+      }
+    });
+  </script>
+</body>
+</html>
