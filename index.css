@@ -1,0 +1,279 @@
+@font-face {
+  font-family: 'Eclipser';
+  src: url("/assets/fonts/eclipser.otf"); }
+@font-face {
+  font-family: 'New Rail Alphabet';
+  src: url("/assets/fonts/NewRailAlphabet-Medium.otf");
+  font-weight: normal; }
+@font-face {
+  font-family: 'New Rail Alphabet';
+  src: url("/assets/fonts/NewRailAlphabet-Bold.otf");
+  font-weight: bold; }
+* {
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  font-weight: 100;
+  -webkit-text-stroke: 0.2px black;
+  max-width: 100vw;
+  cursor: url(/assets/css/cursor/crosshair.gif) 13 13, crosshair;
+  -webkit-animation: cursor 400ms infinite;
+  animation: cursor 400ms infinite; }
+
+img {
+  image-rendering: pixelated;
+  max-width: 100vw; }
+
+@-webkit-keyframes pointer {
+  0% {
+    cursor: url(/assets/css/cursor/c2_f1.gif) 13 13, crosshair; }
+  25% {
+    cursor: url(/assets/css/cursor/c2_f2.gif) 13 13, crosshair; }
+  50% {
+    cursor: url(/assets/css/cursor/c2_f3.gif) 13 13, crosshair; }
+  75% {
+    cursor: url(/assets/css/cursor/c2_f4.gif) 13 13, crosshair; }
+  100% {
+    cursor: url(/assets/css/cursor/crosshair.gif) 13 13, crosshair; } }
+@keyframes pointer {
+  0% {
+    cursor: url(/assets/css/cursor/c2_f1.gif) 13 13, crosshair; }
+  25% {
+    cursor: url(/assets/css/cursor/c2_f2.gif) 13 13, crosshair; }
+  50% {
+    cursor: url(/assets/css/cursor/c2_f3.gif) 13 13, crosshair; }
+  100% {
+    cursor: url(/assets/css/cursor/crosshair.gif) 13 13, crosshair; } }
+header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  width: 100px;
+  display: inline-block;
+  z-index: 100;
+  /* The container */
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */ }
+  header .container {
+    display: none;
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+    animation: pointer 0.4s infinite;
+    transition: opacity 0.4s;
+    cursor: none, pointer;
+    background: #eee; }
+  header .container input {
+    position: absolute;
+    opacity: 0; }
+  header .checkmark {
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 0 6px 10px;
+    border-color: transparent transparent transparent #fff; }
+  header .container input:checked ~ .checkmark {
+    border-left: none;
+    border-right: none;
+    border-top: none; }
+  header .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+  header .container input:checked ~ .checkmark:after {
+    display: block; }
+  header .container .checkmark:after {
+    height: 12px;
+    width: 4px;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff; }
+
+.transparent {
+  opacity: 0; }
+
+@media only screen and (max-width: 760px) {
+  .transparent {
+    opacity: 1; } }
+#albumsWrapper {
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0; }
+  #albumsWrapper p {
+    margin-top: 0px;
+    font-family: "New Rail Alphabet", Helvetica, Arial, sans-serif;
+    font-size: calc(0.4rem + 0.7vw);
+    line-height: calc(0.7rem + 0.6vw);
+    margin: -25px 0px 50px 0px;
+    -webkit-font-smoothing: none;
+    -moz-font-smoothing: none;
+    -o-font-smoothing: none; }
+
+.album {
+  width: 50%;
+  min-width: 400px;
+  align-self: stretch;
+  padding: 0;
+  margin: 0;
+  margin-top: -50px; }
+  .album figure {
+    width: calc(120px + 30%);
+    padding: 0;
+    margin-top: -20px; }
+  .album img {
+    image-rendering: auto;
+    padding: 25px 25px 0px 25px;
+    width: 100%; }
+
+.albumImage {
+  image-rendering: auto;
+  margin-top: -50px;
+  animation: pointer 0.4s infinite;
+  cursor: none, pointer; }
+
+.imageTitleWrapper {
+  display: inline-flex;
+  animation: pointer 0.4s infinite;
+  cursor: none, pointer;
+  width: 0px; }
+
+.imageTitle {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  height: 125px;
+  margin-bottom: -25px;
+  z-index: 10;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: calc(20vw + 250px); }
+
+.imageTitle:hover {
+  background-image: url("/assets/images/buy_button.gif") !important; }
+
+.imageTitleWrapper:hover img {
+  display: none; }
+
+h3, h4, h5 {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-size: calc(0.5rem + 0.45vw); }
+
+.buy:hover {
+  background: #000; }
+  .buy:hover a {
+    color: #fff; }
+
+@media all and (max-width: 875px) {
+  #albumsWrapper {
+    display: block; }
+    #albumsWrapper p {
+      font-size: calc(0.5rem + 0.6vw);
+      line-height: calc(0.9rem + 0.4vw);
+      -webkit-font-smoothing: auto;
+      -moz-font-smoothing: auto;
+      -o-font-smoothing: auto; }
+
+  .album {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0px; }
+
+  .album:nth-of-type(2) {
+    margin-top: 0; } }
+html, body {
+  background: black;
+  font-family: "Eclipser", sans-serif; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; }
+
+p {
+  font-family: 'Eclipser';
+  font-size: calc(0.5rem + 0.45vw);
+  color: #fff;
+  margin-bottom: 10px; }
+
+div {
+  display: flex;
+  width: calc(22.5vw + 280px);
+  line-height: calc(0.7rem + 0.50vw);
+  padding: 20px;
+  margin: 20px;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center; }
+
+#main {
+  margin-bottom: 0; }
+
+figure {
+  padding: 25px 0px; }
+
+.firstImage {
+  margin: calc(-100px + 50vh); }
+
+footer {
+  padding: 0px 20px; }
+  footer p {
+    margin: 60px 0px 20px 0px;
+    font-weight: 300 !important;
+    font-size: calc(0.2rem + 0.5vw);
+    -webkit-font-smoothing: auto;
+    -moz-font-smoothing: auto;
+    -o-font-smoothing: auto;
+    text-align: center; }
+  footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: normal; }
+
+@media all and (max-width: 875px) {
+  footer p {
+    font-size: calc(0.4rem + 0.6vw); } }
+
+#enter {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: none;
+  -webkit-animation: cursor 400ms infinite;
+  animation: pointer 400ms infinite; }
+
+.scroll-lock {
+  height: 100vh;
+  overflow: hidden; }
+
+/*# sourceMappingURL=index.css.map */
