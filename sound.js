@@ -1,17 +1,26 @@
 console.log('sound');
 
 $(document).ready(function() {
-  // Проверяем и восстанавливаем контекст аудио
-  if (Tone.context.state !== 'running') {
-    Tone.context.resume().then(() => {
-      console.log('Audio context resumed successfully');
+  var audioContextResumed = false;
+
+  // Обработчик для кнопки "Enter"
+  $('#enterButton').click(function() {
+    // Включаем автопрокрутку
+    $('body').removeClass('scroll-lock');
+
+    // Восстанавливаем контекст аудио
+    if (!audioContextResumed) {
+      Tone.context.resume().then(() => {
+        console.log('Audio context resumed successfully');
+        audioContextResumed = true;
+        playMusic(); // Запускаем воспроизведение музыки
+      }).catch((err) => {
+        console.error('Error when trying to resume audio context:', err);
+      });
+    } else {
       playMusic(); // Запускаем воспроизведение музыки
-    }).catch((err) => {
-      console.error('Error when trying to resume audio context:', err);
-    });
-  } else {
-    playMusic(); // Запускаем воспроизведение музыки
-  }
+    }
+  });
 
   function playMusic() {
     var buffer = new Tone.Buffer("WTFW.mp3", function(){
