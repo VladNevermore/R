@@ -21,7 +21,7 @@ $(document).ready(function() {
   });
 
   function playMusic() {
-    var buffer = new Tone.Buffer("micici.mp3", function(){
+    var buffer = new Tone.Buffer("https://github.com/VladNevermore/R/blob/main/micici11111.mp3", function(){
       console.log('buffer')
 
       var meter = new Tone.Meter();
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
       function opacityLevel(){
         var level = meter.getLevel();
-        level = Tone.dbToGain(level); //scale it between 0 - 1
+        level = Tone.dbToGain(level); 
         opacity = 1-(Math.round(level * 175) / 100);
         if (opacity < 0.25) {
           $('#main').css('opacity', 0.25);
