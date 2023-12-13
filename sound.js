@@ -3,22 +3,20 @@ console.log('sound');
 $(document).ready(function() {
   var audioContextResumed = false;
 
-  // Обработчик для кнопки "Enter"
   $('#enterButton').click(function() {
-    // Включаем автопрокрутку
+
     $('body').removeClass('scroll-lock');
 
-    // Восстанавливаем контекст аудио
     if (!audioContextResumed) {
       Tone.context.resume().then(() => {
         console.log('Audio context resumed successfully');
         audioContextResumed = true;
-        playMusic(); // Запускаем воспроизведение музыки
+        playMusic(); 
       }).catch((err) => {
         console.error('Error when trying to resume audio context:', err);
       });
     } else {
-      playMusic(); // Запускаем воспроизведение музыки
+      playMusic(); 
     }
   });
 
