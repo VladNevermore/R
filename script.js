@@ -12,19 +12,20 @@ $('body')[0].onmousemove = (function() {
     };
 })();
 
-// Добавленный код для отображения гифки и воспроизведения звука
+var gifContainer = document.getElementById('gif-container');
+var audio = document.getElementById('audio');
+
 window.addEventListener('scroll', function() {
-  var endSection = document.getElementById('endSection');
-  var gifContainer = document.getElementById('gif-container');
-  var audio = document.getElementById('audio');
+    var endSection = document.getElementById('endSection');
+    var endSectionBottom = endSection.getBoundingClientRect().bottom;
+    var windowBottom = window.innerHeight;
 
-  var endSectionBottom = endSection.getBoundingClientRect().bottom;
-  var windowBottom = window.innerHeight;
-
-  if (endSectionBottom <= windowBottom) {
-    gifContainer.style.opacity = 1;
-    audio.play();
-
-    // Добавьте ваш код анимации или других действий после того, как пользователь видит гифку и слышит звук
-  }
+    if (endSectionBottom <= windowBottom) {
+        gifContainer.style.opacity = 1;
+        audio.play();
+    } else {
+        gifContainer.style.opacity = 0;
+        audio.pause();
+        audio.currentTime = 0;
+    }
 });
