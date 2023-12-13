@@ -21,7 +21,7 @@ $(document).ready(function() {
   });
 
   function playMusic() {
-    var buffer = new Tone.Buffer("https://github.com/VladNevermore/R/blob/main/WTFW.mp3", function(){
+    var buffer = new Tone.Buffer("micici.mp3", function(){
       console.log('buffer')
 
       var meter = new Tone.Meter();
