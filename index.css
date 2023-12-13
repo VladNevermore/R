@@ -220,11 +220,11 @@ body {
 
 p {
   font-family: 'Eclipser';
-  font-size: calc(1rem + 0.45vw);
+  font-size: calc(1.5rem + 0.45vw);
   color: #892424;
   margin-bottom: 10px; }
 
-br {
+d {
   font-family: 'Eclipser';
   font-size: calc(1rem + 0.45vw);
   color: #fff;
