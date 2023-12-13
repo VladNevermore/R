@@ -11,7 +11,7 @@
     }
 
     #content {
-      height: 200vh; /* Вы можете увеличить этот параметр для создания более длинной страницы */
+      height: 200vh; 
       background-color: #f0f0f0;
       position: relative;
     }
@@ -40,9 +40,9 @@
 </head>
 <body>
   <div id="content">
-    <div id="trigger">Долистайте вниз, чтобы увидеть гифку</div>
+    <div id="trigger">не не не</div>
     <div id="gif-container">
-      <img id="hidden-gif" src="94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif" alt="Hidden GIF">
+      <img id="hidden-gif" src="11111.gif" alt="Hidden GIF">
       <audio id="audio" src="micici.mp3" preload="auto"></audio>
     </div>
   </div>
@@ -58,9 +58,8 @@
 
       if (triggerBottom <= windowBottom) {
         gifContainer.style.opacity = 1;
-        audio.play(); // Воспроизведение звука
+        audio.play(); 
 
-        // Ваш код анимации или других действий после того, как пользователь видит гифку
       }
     });
   </script>
