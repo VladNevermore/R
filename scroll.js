@@ -8,7 +8,9 @@ function scroll() {
     return;
   }
 
+
   var scrollDelta = 1;
+
 
   gifAnimation = gsap.to('#hidden-gif', {
     y: `+=${scrollDelta}`,
@@ -18,6 +20,14 @@ function scroll() {
   });
 
   gifAnimation.play(); 
+
+ 
+  $(window).on('scroll', function () {
+    if (shouldScroll) {
+      
+      gifAnimation.progress(window.scrollY / ($(document).height() - $(window).height()));
+    }
+  });
 
   setTimeout(scroll, 80);
 }
@@ -29,9 +39,4 @@ $('#enter').click(function() {
 
 $('.playpause').click(function() {
   shouldScroll = !shouldScroll;
-  if (shouldScroll) {
-    gifAnimation.play(); 
-  } else {
-    gifAnimation.pause();
-  }
 });
