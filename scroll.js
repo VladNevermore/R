@@ -1,42 +1,37 @@
 console.log('scroll');
-
 var shouldScroll = false;
 var gifAnimation;
 
 function scroll() {
-  if (!shouldScroll) {
-    return;
-  }
-
-
   var scrollDelta = 1;
-
-
   gifAnimation = gsap.to('#hidden-gif', {
     y: `+=${scrollDelta}`,
     ease: 'none',
     repeat: -1,
-    paused: true  
+    paused: true,
   });
 
-  gifAnimation.play(); 
-
- 
   $(window).on('scroll', function () {
     if (shouldScroll) {
-      
       gifAnimation.progress(window.scrollY / ($(document).height() - $(window).height()));
     }
   });
-
-  setTimeout(scroll, 80);
 }
 
-$('#enter').click(function() {
+$('#enterButton').click(function () {
   shouldScroll = !shouldScroll;
-  scroll();
+  if (shouldScroll) {
+    scroll();
+  } else {
+    gifAnimation.pause(); 
+  }
 });
 
-$('.playpause').click(function() {
+$('.playpause').click(function () {
   shouldScroll = !shouldScroll;
+  if (shouldScroll) {
+    scroll();
+  } else {
+    gifAnimation.pause(); 
+  }
 });
