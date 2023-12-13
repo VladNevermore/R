@@ -1,8 +1,9 @@
 console.log('scroll');
+
 var shouldScroll = false;
 var gifAnimation;
 
-function scroll() {
+function initGifAnimation() {
   var scrollDelta = 1;
   gifAnimation = gsap.to('#hidden-gif', {
     y: `+=${scrollDelta}`,
@@ -10,28 +11,25 @@ function scroll() {
     repeat: -1,
     paused: true,
   });
-
-  $(window).on('scroll', function () {
-    if (shouldScroll) {
-      gifAnimation.progress(window.scrollY / ($(document).height() - $(window).height()));
-    }
-  });
 }
 
-$('#enterButton').click(function () {
-  shouldScroll = !shouldScroll;
+function handleScroll() {
   if (shouldScroll) {
-    scroll();
-  } else {
-    gifAnimation.pause();
+    gifAnimation.progress(window.scrollY / ($(document).height() - $(window).height()));
   }
-});
+}
 
-$('.playpause').click(function () {
-  shouldScroll = !shouldScroll;
-  if (shouldScroll) {
-    scroll();
-  } else {
-    gifAnimation.pause();
-  }
+$(document).ready(function () {
+  initGifAnimation();
+
+  $('#enterButton, .playpause').click(function () {
+    shouldScroll = !shouldScroll;
+    if (shouldScroll) {
+      handleScroll();
+    } else {
+      gifAnimation.pause();
+    }
+  });
+
+  $(window).on('scroll', handleScroll);
 });
