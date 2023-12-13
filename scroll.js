@@ -23,7 +23,7 @@ $('#enterButton').click(function () {
   if (shouldScroll) {
     scroll();
   } else {
-    gifAnimation.pause(); 
+    gifAnimation.pause();
   }
 });
 
@@ -32,6 +32,6 @@ $('.playpause').click(function () {
   if (shouldScroll) {
     scroll();
   } else {
-    gifAnimation.pause(); 
+    gifAnimation.pause();
   }
 });
