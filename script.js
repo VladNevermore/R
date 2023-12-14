@@ -29,3 +29,22 @@ window.addEventListener('scroll', function() {
         audio.currentTime = 0;
     }
 });
+function openImage() {
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("myImage");
+    var modalImg = document.getElementById("modalImg");
+
+    modal.style.display = "block";
+    modalImg.src = img.src;
+}
+
+function closeImage() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
