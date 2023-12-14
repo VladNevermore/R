@@ -81,7 +81,18 @@
             </div>
             <div style="text-align: center;">
             <p>It would never open.</p>
-            <figure><img src="whaaaa1.png" alt="" draggable="false"></figure>
+<body>
+    <div class="image-container">
+        <figure>
+            <img src="whaaaa1.png" alt="" id="myImage" draggable="false" onclick="openImage()">
+        </figure>
+        <div class="modal" id="myModal">
+            <span class="close" onclick="closeImage()">&times;</span>
+            <img class="modal-content" id="modalImg" src="whaaaa1.png" alt="">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
             <p>His name is Rub1ck0ff.</p>
         </div>
     </div>
