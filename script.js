@@ -5,15 +5,18 @@ $(document).ready(function () {
     let currentScale = 1;
     let currentTranslate = { x: 0, y: 0 };
 
-    $('.image-container').on('touchstart', function (e) {
+    const imageContainer = $('.image-container');
+    const modal = $("#myModal");
+    const modalImg = $("#modalImg");
+
+    imageContainer.on('touchstart', function (e) {
         initialTouches = e.originalEvent.touches;
     });
 
-    $('.image-container').on('touchmove', function (e) {
+    imageContainer.on('touchmove', function (e) {
         const currentTouches = e.originalEvent.touches;
 
         if (initialTouches.length === 2 && currentTouches.length === 2) {
-
             const deltaX = currentTouches[1].clientX - currentTouches[0].clientX;
             const deltaY = currentTouches[1].clientY - currentTouches[0].clientY;
             const initialDistance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
@@ -25,7 +28,7 @@ $(document).ready(function () {
             const scaleChange = newDistance / initialDistance;
             currentScale *= scaleChange;
 
-            $(this).find('img').css({
+            imageContainer.find('img').css({
                 'transform': `scale(${currentScale}) translate(${currentTranslate.x}px, ${currentTranslate.y}px)`
             });
         }
@@ -33,7 +36,7 @@ $(document).ready(function () {
         initialTouches = currentTouches;
     });
 
-    $('.image-container').on('touchend', function () {
+    imageContainer.on('touchend', function () {
         initialTouches = [];
     });
 
@@ -49,41 +52,36 @@ $(document).ready(function () {
         };
     })();
 
-    var gifContainer = document.getElementById('gif-container');
-    var audio = document.getElementById('audio');
+    const gifContainer = $('#gif-container');
+    const audio = $('#audio')[0];
 
-    window.addEventListener('scroll', function () {
-        var endSection = document.getElementById('endSection');
-        var endSectionBottom = endSection.getBoundingClientRect().bottom;
-        var windowBottom = window.innerHeight;
+    $(window).on('scroll', function () {
+        const endSection = $('#endSection');
+        const endSectionBottom = endSection.offset().top + endSection.height();
+        const windowBottom = $(window).scrollTop() + $(window).height();
 
         if (endSectionBottom <= windowBottom) {
-            gifContainer.style.opacity = 1;
+            gifContainer.css('opacity', 1);
             audio.play();
         } else {
-            gifContainer.style.opacity = 0;
+            gifContainer.css('opacity', 0);
             audio.pause();
             audio.currentTime = 0;
         }
     });
 
-    function openImage() {
-        var modal = document.getElementById("myModal");
-        var img = document.getElementById("myImage");
-        var modalImg = document.getElementById("modalImg");
+    imageContainer.find('img').on('click', function () {
+        modal.css('display', 'block');
+        modalImg.attr('src', $(this).attr('src'));
+    });
 
-        modal.style.display = "block";
-        modalImg.src = img.src;
-    }
+    $('#myModal .close').on('click', function () {
+        modal.css('display', 'none');
+    });
 
-    function closeImage() {
-        document.getElementById("myModal").style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        var modal = document.getElementById("myModal");
-        if (event.target === modal) {
-            modal.style.display = "none";
+    $(window).on('click', function (event) {
+        if (event.target === modal[0]) {
+            modal.css('display', 'none');
         }
-    };
+    });
 });
