@@ -5,8 +5,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #000; 
-    color: #fff; 
+    background-color: #000;
+    color: #fff;
 }
 
 .content {
@@ -34,10 +34,13 @@ d {
 }
 
 .pagination-area {
-    background-color: #fff;
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #000;
     cursor: pointer;
 }
 
 .pagination-arrow {
-    fill: #000; 
+    fill: #fff;
 }
