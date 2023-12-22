@@ -42,16 +42,8 @@ p {
     top: 50%;
     transform: translateY(-50%);
     display: flex;
-}
-
-.pagination-back {
-    order: 1; /* изменено местоположение кнопки "назад" */
-    margin-right: auto; /* кнопка "назад" будет выравниваться с левой стороны */
-}
-
-.pagination-forward {
-    order: 2; /* изменено местоположение кнопки "вперед" */
-    margin-left: auto; /* кнопка "вперед" будет выравниваться с правой стороны */
+    width: 100%; /* Чтобы кнопки занимали всю ширину экрана */
+    justify-content: space-between; /* Равномерное распределение между кнопками */
 }
 
 .pagination-arrow {
