@@ -38,12 +38,11 @@ p {
 }
 
 .pagination-area {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
-    width: 100%; /* Чтобы кнопки занимали всю ширину экрана */
-    justify-content: space-between; /* Равномерное распределение между кнопками */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px; /* Ограничиваем максимальную ширину кнопок */
+    margin: 0 auto; /* Центрируем кнопки внутри контейнера */
 }
 
 .pagination-arrow {
