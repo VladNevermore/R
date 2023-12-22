@@ -37,6 +37,27 @@ p {
     color: #fff;
 }
 
+.return-home {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #892424;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Eclipser';
+    font-size: calc(0.7rem + 0.45vw);
+    display: none; /* Изначально скрываем кнопку */
+}
+
+.return-home:hover {
+    background-color: #6b1d1d;
+}
+
+
 .pagination-area {
     position: fixed;
     top: 50%;
