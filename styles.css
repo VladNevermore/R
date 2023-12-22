@@ -40,17 +40,18 @@ p {
 .pagination-area {
     position: fixed;
     top: 50%;
-    left: 10px;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 1;
 }
 
-.pagination-area:last-child {
-    left: auto;
-    right: 10px; 
+.pagination-back {
+    left: 10px;
 }
 
+.pagination-forward {
+    right: 10px;
+}
 
 .pagination-arrow {
     fill: #fff;
