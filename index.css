@@ -249,6 +249,18 @@ body {
   max-height: 100px;
 }
 
+.info__headline {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  user-select: none;
+  color: #fff; /* Set the text color to white */
+  font-weight: normal;
+  cursor: pointer;
+  background-color: #000; /* Set the background color to black */
+  padding: 10px 15px; /* Add padding for better visibility */
+}
+
 .info__headline::before {
   content: "";
   position: absolute;
@@ -262,16 +274,6 @@ body {
 
 .info__switch:checked~.info__headline::before {
   transform: rotate(180deg) translateY(6px);
-}
-
-.info__headline {
-  display: block;
-  position: relative;
-  margin-bottom: 15px;
-  user-select: none;
-  color: #39739d;
-  font-weight: normal;
-  cursor: pointer;
 }
 
 .info__headline:hover {
