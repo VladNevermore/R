@@ -40,18 +40,23 @@ p {
 .pagination-area {
     position: fixed;
     top: 50%;
+    left: 10px;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 1;
-    display: none; /* Изначально скрываем кнопки */
+}
+
+.pagination-area:last-child {
+    left: auto;
+    right: 10px; 
 }
 
 .pagination-back {
-    left: 10px;
+    order: 2; 
 }
 
 .pagination-forward {
-    right: 10px;
+    order: 1; 
 }
 
 .pagination-arrow {
