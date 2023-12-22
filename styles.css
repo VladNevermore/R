@@ -18,6 +18,10 @@ body {
     text-align: center;
 }
 
+#textContent {
+    line-height: 1.5; 
+}
+
 h1, p {
     font-family: 'Eclipser';
     margin-bottom: 10px;
