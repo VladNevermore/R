@@ -27,12 +27,19 @@ const pages = [
 
 ];
 
-function nextPage() {
+function updateContent() {
     const titleElement = document.getElementById('title');
     const contentElement = document.getElementById('textContent');
 
-    currentPage = (currentPage + 1) % pages.length;
-
-    titleElement.innerText = pages[currentPage].title;
-    contentElement.innerText = pages[currentPage].text;
+    titleElement.textContent = pages[currentPage].title;
+    contentElement.textContent = pages[currentPage].text;
 }
+
+function nextPage() {
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        updateContent();
+    }
+}
+
+updateContent();
