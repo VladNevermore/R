@@ -28,10 +28,16 @@ const pages = [
 function updateContent() {
     const titleElement = document.getElementById('title');
     const contentElement = document.getElementById('textContent');
+    const backButton = document.querySelector('.pagination-back');
+    const forwardButton = document.querySelector('.pagination-forward');
 
     titleElement.textContent = pages[currentPage].title;
-    contentElement.innerHTML = pages[currentPage].text;
+    contentElement.textContent = pages[currentPage].text;
+
+    backButton.style.display = (currentPage === 0) ? 'none' : 'block';
+    forwardButton.style.display = (currentPage === pages.length - 1) ? 'none' : 'block';
 }
+
 
 function prevPage() {
     if (currentPage > 0) {
