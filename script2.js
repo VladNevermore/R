@@ -25,12 +25,16 @@ const pages = [
     }
 ];
 
-const isHomePage = window.location.pathname === '/kripota.html'; 
 
-if (isHomePage) {
+const isTextPage = window.location.pathname.includes('/R/Binaryshadow/'); // Укажите путь к вашей странице с текстом
 
-    const tiResultFragment = `
-        <pre id="tiresult" style="font-size: 9px; background-color: #000000; font-weight: bold; padding: 4px 5px; --fs: 9px;">
+if (isTextPage) {
+
+    const tiResultElement = document.getElementById('tiresult');
+
+    if (!tiResultElement) {
+
+        const tiResultFragment = `
 <pre id="tiresult" style="font-size: 9px; background-color: #000000; font-weight: bold; padding: 4px 5px; --fs: 9px;"><b style="color:#000000">06600996066666696609660690090006099699660099000696</b>
 <b style="color:#000000">90006966669669690909000669666996996006699069609960</b>
 <b style="color:#000000">0966906600969990060606690660669</b><b style="color:#131313">6</b><b style="color:#2F2F2F">6</b><b style="color:#373737">0</b><b style="color:#333333">9</b><b style="color:#1E1E1E">0</b><b style="color:#080808">9</b><b style="color:#000000">0096609606600</b>
@@ -57,12 +61,11 @@ if (isHomePage) {
 <b style="color:#000000">66990690990696666906000006900096066960990006690609</b>
 <b style="color:#000000">96009666990660960966966906999969009066966099000996</b>
 </pre>
-        </pre>
-    `;
-    document.querySelector('.content').insertAdjacentHTML('afterbegin', tiResultFragment);
+            </pre>
+        `;
+        document.querySelector('.content').insertAdjacentHTML('afterbegin', tiResultFragment);
+    }
 }
-
-// Ваш код кнопок и прочего здесь
 
 
 function updateContent() {
