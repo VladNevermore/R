@@ -33,6 +33,12 @@ function updateContent() {
     contentElement.innerHTML = pages[currentPage].text;
 }
 
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        updateContent();
+    }
+}
 
 function nextPage() {
     if (currentPage < pages.length - 1) {
