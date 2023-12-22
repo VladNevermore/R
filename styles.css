@@ -38,11 +38,20 @@ p {
 }
 
 .pagination-area {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px; /* Ограничиваем максимальную ширину кнопок */
-    margin: 0 auto; /* Центрируем кнопки внутри контейнера */
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    display: none; 
+}
+
+.pagination-back {
+    left: 10px;
+}
+
+.pagination-forward {
+    right: 10px;
 }
 
 .pagination-arrow {
