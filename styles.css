@@ -16,10 +16,17 @@ body {
     text-align: center;
 }
 
-#title {
-    margin-bottom: 20px;
+h1, d {
+    font-family: 'Eclipser';
+    margin-bottom: 10px;
 }
 
-#textContent {
-    text-align: justify;
+h1 {
+    font-size: calc(1rem + 0.45vw);
+    color: #892424;
+}
+
+d {
+    font-size: calc(0.7rem + 0.45vw);
+    color: #fff;
 }
