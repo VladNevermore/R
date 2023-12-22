@@ -47,6 +47,11 @@ function prevPage() {
     }
 }
 
+function returnHome() {
+    window.location.href = 'https://vladnevermore.github.io/R/kripota'; 
+}
+
+
 function nextPage() {
     if (currentPage < pages.length - 1) {
         currentPage++;
