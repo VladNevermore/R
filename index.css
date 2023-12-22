@@ -243,6 +243,15 @@ c {
   font-size: calc(0.7rem + 0.45vw);
   color: #892424;
   margin-bottom: 10px; }
+u {
+  display: block;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: calc(0.7rem + 0.45vw);
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: calc(1rem + 0.45vw); 
+}
+
 
 div {
   display: flex;
