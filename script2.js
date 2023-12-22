@@ -47,9 +47,17 @@ function prevPage() {
     }
 }
 
+
+const returnHomeButton = document.createElement('div');
+returnHomeButton.classList.add('return-home');
+returnHomeButton.textContent = 'Вернуться на главную';
+returnHomeButton.onclick = returnHome;
+document.body.appendChild(returnHomeButton);
+
 function returnHome() {
     window.location.href = 'https://vladnevermore.github.io/R/kripota'; 
 }
+
 
 
 function nextPage() {
