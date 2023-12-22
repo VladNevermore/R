@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Eclipser';
-  src: url("/assets/fonts/eclipser.otf");
-}
+  src: url("/assets/fonts/eclipser.otf"); }
 @font-face {
   font-family: 'New Rail Alphabet';
   src: url("/assets/fonts/NewRailAlphabet-Medium.otf");
@@ -223,62 +222,9 @@ html, body {
   font-family: "Eclipser", sans-serif; }
 
 body {
-  font-family: roboto, sans-serif;
-  font-size: 15px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-}
-
-.info {
-  background-color: #f9f9ff;
-  padding: 10px 25px;
-}
-
-.info__switch {
-  display: none;
-}
-
-.info__body {
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.4s;
-}
-
-.info__switch:checked~.info__body {
-  max-height: 100px;
-}
-
-.info__headline {
-  display: block;
-  position: relative;
-  margin-bottom: 15px;
-  user-select: none;
-  color: #fff; /* Set the text color to white */
-  font-weight: normal;
-  cursor: pointer;
-  background-color: #000; /* Set the background color to black */
-  padding: 10px 15px; /* Add padding for better visibility */
-}
-
-.info__headline::before {
-  content: "";
-  position: absolute;
-  left: -18px;
-  top: 4px;
-  border: 6px solid #39739d;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  border-left-color: transparent;
-}
-
-.info__switch:checked~.info__headline::before {
-  transform: rotate(180deg) translateY(6px);
-}
-
-.info__headline:hover {
-  text-decoration: underline;
-}
+  flex-wrap: nowrap; }
 
 p {
   font-family: 'Eclipser';
