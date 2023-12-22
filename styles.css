@@ -41,16 +41,17 @@ p {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
     display: flex;
 }
 
 .pagination-back {
-    order: 2; /* изменено местоположение кнопки "назад" */
+    order: 1; /* изменено местоположение кнопки "назад" */
+    margin-right: auto; /* кнопка "назад" будет выравниваться с левой стороны */
 }
 
 .pagination-forward {
-    order: 1; /* изменено местоположение кнопки "вперед" */
+    order: 2; /* изменено местоположение кнопки "вперед" */
+    margin-left: auto; /* кнопка "вперед" будет выравниваться с правой стороны */
 }
 
 .pagination-arrow {
