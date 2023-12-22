@@ -30,8 +30,9 @@ function updateContent() {
     const contentElement = document.getElementById('textContent');
 
     titleElement.textContent = pages[currentPage].title;
-    contentElement.textContent = pages[currentPage].text;
+    contentElement.innerHTML = pages[currentPage].text;
 }
+
 
 function nextPage() {
     if (currentPage < pages.length - 1) {
